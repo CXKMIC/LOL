@@ -177,6 +177,11 @@ li {
     height: 100%
 }
 
+.head-nav>li>a:hover span{
+    color: #00a383;
+    transition-delay: 0.2s;
+}
+
 .head-nav-title {
     display: block;
     color: #fff;
@@ -246,9 +251,10 @@ li {
 
 /* 官网通用顶部活动 */
 .comm-topact {
-    width: 100%;
+    display: flex;
+    width: 100vw;
     min-width: 1120px;
-    height: 747px;
+    height: 100vh;
     overflow: hidden;
     position: relative;
     background: center top no-repeat;
@@ -293,7 +299,7 @@ li {
 
 
 /* 跳转栏 */
-.pagetab {
+/* .pagetab {
     border-top: 4px solid #d7d7d7;
     border-bottom: 1px solid #e2e2e2;
     height: 48px;
@@ -317,16 +323,44 @@ li {
     text-decoration: none;
     color: #00a383;
     border-top: 4px solid #00a383;
+} */
+
+
+/* 资讯页 */
+.layout{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
 }
 
 
 /* 轮播图*/
-.box {
+.big-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex:1
+}
+
+.img-title{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.img-title h1{
+    color: #701717;
+}
+
+.inner-box{
+    flex: 5;
+}
+
+.inner-box .box {
     width: 650px;
     height:563px;
     overflow: hidden;
-    margin-left: 0px;
-    margin-top:-4px;
     position: relative;
 }
 
@@ -393,52 +427,63 @@ li {
     margin: 0 4px;
 }
 
+.score-list{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-.wraper .spring-list{
-    position: absolute;
-    right: 540px;
-    width: 100px;
-    height: 53px;
+
+.score-list .summer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }
-.wraper .spring-list .list1{
-    margin-top: -14px;
-    width: 500px;
-    height: 264px;
+
+.score-list .spring{
+    flex: 1;
 }
-.wraper .summer-list{
-    position: absolute;
-    right: 540px;
-    width: 100px;
-    height:53px;
-    margin-top: 293px;
+
+.score-list .spring-list h2{
+    text-align: center;
+    color: #701717;
 }
-.wraper .summer-list .list2{
-    width: 500px;
-    height: 264px;
+.score-list .summer-list h2{
+    text-align: center;
+    color: #701717;
 }
+
 
 
 .gamebackground{
-    width: 1240px;
-    height: 747px;
-    margin-left: 139px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .gamebackground .story-title{
+    display: flex;
+    align-items: center;
+    flex: 0.5;
     font-family: "阿里妈妈数黑体 Bold" !important;
     text-align: center;
     font-size: 35px;
     font-weight: 1000;
     color: rgb(140, 47, 47);
-    padding-top: 10px;
 }
 
 .gamebackground .story{
+    flex: 3;
     background: url(images/background.jpg);
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    width: 80vw;
+    height: 40vh;
     font-size: 17px;
     font-weight: 600;
     border-radius: 10px;
@@ -448,30 +493,35 @@ li {
 }
 
 
-.role-info{
-    background-color: #ffffff;
-    width: 100%;
-    height: 747px;
 
+.role-info{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
 }
 
 .role-info .role-title{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    flex: 0.5;
     font-size: 25px;
     font-weight: 1000;
     color: rgb(140, 47, 47);
-    padding-top: 55px;
-    padding-bottom: 30px;
 }
 
 .role-info .role{
+    display: flex;
+    flex-direction: column;
+    flex: 3;
     height: 574px;
     overflow-x:hidden;
 }
 
-.role-info .role1, .role-info .role2, .role-info .role3{
-    padding-left: 28px;
-}
+
 
 
 /* 滚动条样式 */
@@ -490,8 +540,12 @@ li {
 
 
 .game-way{
-    height: 747px;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .game-way .gameway-title{
@@ -499,8 +553,7 @@ li {
     font-size: 25px;
     font-weight: 1000;
     color: rgb(140, 47, 47);
-    padding-top: 18px;
-    padding-bottom: 18px;
+
 }
 
 .game-way .gameway-content{
@@ -526,7 +579,7 @@ li {
 }
 
 
-.scrollpage{
+/* .scrollpage{
     transform: translateX(400%);
     transition: transform 0.8s ease-in-out 0s;
 }
@@ -537,7 +590,7 @@ li {
 
 .scrollpage.show{
     transform: translateX(0);
-}
+} */
 
 
 .footer {

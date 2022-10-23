@@ -83,166 +83,174 @@
     <div class="right-nav"><a href="#page1" class="buttom" >返&nbsp回&nbsp顶&nbsp部</a></div>
 
       
-        <div class="wraper scrollpage" id="page2">
-        <div class="layout" >
-          <div class="colbox">
-            <div class="pagetab">
-              <ul class="pagetab-list">
-                <li><a class="pagetab-list-lnk"  target="_blank">新手指引</a></li>
-                <li><a class="pagetab-list-lnk"  target="_blank">玩家创作馆</a></li>
-                <li><a class="pagetab-list-lnk"  target="_blank">玩家服务</a></li>
-                <li><a class="pagetab-list-lnk"  target="_blank">秩序殿堂</a></li>
-                <li><a class="pagetab-list-lnk"  target="_blank">峡谷之巅</a></li>
-                <li><a class="pagetab-list-lnk"  target="_blank">赛事中心</a></li>
-                <li><a class="pagetab-list-lnk"  target="_blank">视频中心</a></li>
-                <li><a class="pagetab-list-lnk"  target="_blank">下载</a></li>
-                <li><a class="pagetab-list-lnk" href="../个人中心/关于.html" target="_blank">关于</a></li>
-              </ul>
-            </div>
-          
-        </div>
-        <div class="img-title">2022LPL出征战队</div>
-        <div class="list1-title">2022春季常规赛积分榜</div>
-        <div class="list2-title">2022夏季常规赛积分榜</div>
-        <div class="spring-list">
-         <img class="list1" src="images/springlist.png" >
-        </div>
-        <div class="summer-list">
-          <img class="list2"  src="images/summerlist.png" >
-        </div>
-      
-          <div class="box">
-            <ul id="inner-box">
-              <li>
-                <img src="images/1.png">
-              </li>
-              <li>
-                <img src="images/2.png">
-              </li>
-              <li>
-                <img src="images/3.png">
-              </li>
-              <li>
-                <img src="images/4.png">
-              </li>
-              <li>
-                <img src="images/1.png">
-              </li>
+     <!-- 资料页 -->
+      <div class="layout" id="page2">
+        <!-- <div class="colbox">
+          <div class="pagetab">
+            <ul class="pagetab-list">
+              <li><a class="pagetab-list-lnk"  target="_blank">新手指引</a></li>
+              <li><a class="pagetab-list-lnk"  target="_blank">玩家创作馆</a></li>
+              <li><a class="pagetab-list-lnk"  target="_blank">玩家服务</a></li>
+              <li><a class="pagetab-list-lnk"  target="_blank">秩序殿堂</a></li>
+              <li><a class="pagetab-list-lnk"  target="_blank">峡谷之巅</a></li>
+              <li><a class="pagetab-list-lnk"  target="_blank">赛事中心</a></li>
+              <li><a class="pagetab-list-lnk"  target="_blank">视频中心</a></li>
+              <li><a class="pagetab-list-lnk"  target="_blank">下载</a></li>
+              <li><a class="pagetab-list-lnk" href="../个人中心/关于.html" target="_blank">关于</a></li>
             </ul>
-            <ol id="ol">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ol>
-            <div class="btn">
-              <span class="left" id="left">
-                <</span> <span class="right" id="right">>
-              </span>
+          </div>
+        
+      </div> -->
+        <div class="score-list">
+          <div class="sping">
+            <div class="spring-list">
+              <h2>2022春季常规赛积分榜</h2>
+              <img class="list1" src="images/springlist.png" >
             </div>
+          </div>
+          <div class="summer">
+            <div class="summer-list">
+              <h2>2022夏季常规赛积分榜</h2>
+              <img class="list2"  src="images/summerlist.png" >
+            </div>
+          </div>
+        </div>
+        <div class="big-box">
+          <div class="img-title"><h1>2022LPL出征战队</h1></div>
+          <div class="inner-box">
+            <div class="box">
+              <ul id="inner-box">
+                <li>
+                  <img src="images/1.png">
+                </li>
+                <li>
+                  <img src="images/2.png">
+                </li>
+                <li>
+                  <img src="images/3.png">
+                </li>
+                <li>
+                  <img src="images/4.png">
+                </li>
+                <li>
+                  <img src="images/1.png">
+                </li>
+              </ul>
+              <ol id="ol">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ol>
+              <div class="btn">
+                <span class="left" id="left">
+                  <</span> <span class="right" id="right">>
+                </span>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+            var oBox = document.getElementById("box");
+            var oUl = document.getElementById("inner-box");
+            var oLeft = document.getElementById("left");
+            var oRight = document.getElementById("right");
+            var cur = 0; //定义一个变量用于设置left值
+            var timer = null; //定义一个计时器
+            var target = 0;
+            var timer1 = null;
+            var i = 0;
+            timer = setInterval(autoPlay, 3000); // 定义计时器每3秒执行一次
+            function autoPlay() { //执行每次执行函数，left值减1
+              if (target <= -400) {
+                cur = 0;
+                target = -100;
+              } else {
+                target -= 100;
+              }
+              sport(target);
+              btnBottom();
+            }
           
-            <script type="text/javascript">
-              var oBox = document.getElementById("box");
-              var oUl = document.getElementById("inner-box");
-              var oLeft = document.getElementById("left");
-              var oRight = document.getElementById("right");
-              var cur = 0; //定义一个变量用于设置left值
-              var timer = null; //定义一个计时器
-              var target = 0;
-              var timer1 = null;
-              var i = 0;
-              timer = setInterval(autoPlay, 3000); // 定义计时器每3秒执行一次
-              function autoPlay() { //执行每次执行函数，left值减1
-                if (target <= -400) {
-                  cur = 0;
-                  target = -100;
-                } else {
-                  target -= 100;
-                }
-                sport(target);
-                btnBottom();
+            oRight.onclick = function (argument) {
+              if (target <= -400) {
+                cur = 0;
+                target = -100;
+              } else {
+                target -= 100;
               }
-            
-              oRight.onclick = function (argument) {
-                if (target <= -400) {
-                  cur = 0;
-                  target = -100;
-                } else {
-                  target -= 100;
-                }
-                sport(target);
-                btnBottom();
-              }
-            
-              oLeft.onclick = function (argument) {
-                if (target > -100) {
-                  cur -= 400;
-                  target = -300;
-                
-                } else {
-                  target += 100;
-                }
-                sport(target);
+              sport(target);
+              btnBottom();
+            }
+          
+            oLeft.onclick = function (argument) {
+              if (target > -100) {
+                cur -= 400;
+                target = -300;
               
-              
-                btnBottom();
+              } else {
+                target += 100;
               }
+              sport(target);
             
-              // 增加下标显示效果
             
-              btnBottom()
-            
-              function btnBottom() {
-                i = -(target / 100);
-                i == 4 ? i = 0 : i;  //判断是否大于规定的下标数目，若大于则跳到第一个下标
-                var oOl = document.getElementById("ol");
-                var oLi = oOl.getElementsByTagName("li");
-                for (j = 0; j < oLi.length; j++) {
-                  oLi[j].style.background = '';
-                }
-                oLi[i].style.background = '#fff';
-              }
-            
-              // 加点击事件
+              btnBottom();
+            }
+          
+            // 增加下标显示效果
+          
+            btnBottom()
+          
+            function btnBottom() {
+              i = -(target / 100);
+              i == 4 ? i = 0 : i;  //判断是否大于规定的下标数目，若大于则跳到第一个下标
               var oOl = document.getElementById("ol");
               var oLi = oOl.getElementsByTagName("li");
               for (j = 0; j < oLi.length; j++) {
-                oLi[j].index = j
-                oLi[j].onclick = function () {
-                  target = -(this.index * 100);
-                  sport(target);
-                  btnBottom()
+                oLi[j].style.background = '';
+              }
+              oLi[i].style.background = '#fff';
+            }
+          
+            // 加点击事件
+            var oOl = document.getElementById("ol");
+            var oLi = oOl.getElementsByTagName("li");
+            for (j = 0; j < oLi.length; j++) {
+              oLi[j].index = j
+              oLi[j].onclick = function () {
+                target = -(this.index * 100);
+                sport(target);
+                btnBottom()
+              }
+            }
+          
+            function sport(tar) { //图片滑动的速度
+              clearInterval(timer1);
+              timer1 = setInterval(autoPlay, 30); //设置定时器每30毫秒执行一次
+              function autoPlay() {
+                if (cur == tar) {
+                  clearInterval(timer1) //大于目标值时，清空计时器
+                } else {
+                  speed = (tar - cur) / 7; //计算图片的滑动速度，除数越高滑动越慢
+                  speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed); //向上取整或向下取整
+                  cur = cur + speed;
+                  oUl.style.left = cur + "%";  //定义元素的左边到最近一个父元素的左部的百分比位置
                 }
               }
-            
-              function sport(tar) { //图片滑动的速度
-                clearInterval(timer1);
-                timer1 = setInterval(autoPlay, 30); //设置定时器每30毫秒执行一次
-                function autoPlay() {
-                  if (cur == tar) {
-                    clearInterval(timer1) //大于目标值时，清空计时器
-                  } else {
-                    speed = (tar - cur) / 7; //计算图片的滑动速度，除数越高滑动越慢
-                    speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed); //向上取整或向下取整
-                    cur = cur + speed;
-                    oUl.style.left = cur + "%";  //定义元素的左边到最近一个父元素的左部的百分比位置
-                  }
-                }
-              }
-              oBox.onmouseover = function () { //鼠标移到图片时停止计时
-                clearInterval(timer);
-              }
-              oBox.onmouseout = function () { //移出图片外开始计时
-                timer = setInterval(autoPlay, 3000);
-              }
-            </script>
-
-          </div>
+            }
+            oBox.onmouseover = function () { //鼠标移到图片时停止计时
+              clearInterval(timer);
+            }
+            oBox.onmouseout = function () { //移出图片外开始计时
+              timer = setInterval(autoPlay, 3000);
+            }
+          </script>
         </div>
       </div>
+    </div>
     
     <!-- 游戏背景 -->
-      <div class="gamebackground scrollpage" id="page3">
+      <div class="gamebackground" id="page3">
         <div class="story-title">英雄联盟背景故事</div>
         <div class="story">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp直到二十年前，符文之地才从战乱中解脱。这片大陆上的人民自远古以来就习惯结群而斗，用战争解决纷争。而不论何时，战争的工具始终都是魔法。军队用法术和符文武装自己，英雄们打造出大部分魔法物品率领部队彼此厮杀。召唤者，瓦罗然大陆的实际领导者们，他们疯狂使用魔法能量攻击敌人的部队和支持者。他们拥有近乎无限的原始魔法力量使用，从未考虑过无止境的滥用魔法会给这片大陆的环境带来怎么样的灾难<br>
           &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp然而近200年来无止境的魔法滥用让瓦罗然的人民看到了符文之地的脆弱现状。最后两次符文之战剧烈影响了瓦罗然的地质环境，尽管人们试图聚集魔法能量来恢复这灾难性的后果，却毫无作用。剧烈的地震和恐怖的魔法风暴让整个瓦罗然为之颤抖，对人们来说这份恐惧远超过战争的可怖。人们终于意识到世界已经承受不起符文之战的破坏<br>
@@ -260,49 +268,48 @@
       <div><br><br></div>
 
       <!-- 角色大全-  -->
-      <div class="role-info scrollpage" id="page4">
-      <div class="role-title">英雄联盟角色大全(截止于2022.10.02)</div>
-      <div class="role" id="role-bar">
-        <img class="role1" src="images/role1.png" alt="">
-        <img class="role2" src="images/role2.png" alt="">
-        <img class="role3" src="images/role3.png" alt="">
+      <div class="role-info" id="page4">
+        <div class="role-title">英雄联盟角色大全(截止于2022.10.02)</div>
+        <div class="role" id="role-bar">
+          <img class="role1" src="images/role1.png" alt="">
+          <img class="role2" src="images/role2.png" alt="">
+          <img class="role3" src="images/role3.png" alt="">
+        </div>
       </div>
-    </div>
 
     <div><br><br></div>
 
     <!-- 玩法 -->
-      <div class="game-way scrollpage" id="page5">
-      <div class="gameway-title">游戏规则</div>
-      <div class="gameway-content">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp英雄联盟是一款经典的MOBA类游戏（简称LOL）。十名玩家每个玩家各选一个英雄，玩家们在一张地图上分成大体对称两边进行5V5对局，评判胜利的方式就是把对方基地水晶推平或者对方投降，而水晶需要英雄去拆，你去拆对方会阻止，所以需要击杀敌方英雄已达到拆塔的目的，这就体现了游戏的竞技性，一场游戏必须有五个人输，不是你死就是我亡，这也因此衍生了诸多的战术和玩法。玩家分为四条路，上路(上单）、中路(中单）、野区(打野）、下路(ad和辅助），通过攻击击杀敌方小兵、野怪(中立单位）或敌方英雄获取经济和经验，以此提升等级，提升装备，来达到推掉对方水晶，获取游戏胜利的目的。</div>
-      <br><br>
-      <div class="top">
-        <div class="top-title">上单</div>
-        <div class="top-content">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp顾名思义，即上路单人。承担的职责就是推塔推进，一般选择比较肉或者能抗能打的英雄。他在团战中要么负责开团，秒掉敌方主力输出，要么负责承受伤害，为队友全力输出保驾护航。</div>
-      </div>
-      <div class="jug">
-        <div class="jug-title">打野</div>
-        <div class="jug-content">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp通过清除野怪来获得经济和等级的提升。一般是队伍战队的发起点，责任是保留好主要的大型野怪，利用野区经济把经济最大化，以保障上、中、下三路发育，配合队友获得对战的优势，从这个角度理解打野属于经济补位。同时打野还可以充当一个gank位，因为上中下位置相对固定，所以打野位置不确定因素大，对某一路局势影响大。一个好的打野，是会审时度势，根据队友发育情况，对手强弱及兵线位置来选择帮助哪一条路。这也是为何有人在游戏中称打野为“爸爸”的原因了。</div>
-      </div>
-      <div class="mid">
-        <div class="mid-title">中单</div>
-        <div class="mid-content">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp与上单一样，中路单人。它是一个Carry位置，是团队的主力输出点。一般都选择手长的法师类英雄，少数是物理类近战英雄。中单不仅要负责推线推塔，还要在团战中最大化自己的输出，所以，中单的前期顺利发育至关重要</div>
-      </div>
-      <div class="sup">
-        <div class="sup-title">辅助</div>
-        <div class="sup-content">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp辅助的职业是保护ad的发育，辅助的作用在整个团队中尤为重要，占用很少的团队资源，要做视野，做探路兵。因此可以说辅助拿着最少的钱，死着最多的次数，做最苦的工作。开团是他们，保护Carry位置是他们，插眼是他们，身先士卒也是他们。在队伍取得胜利的时候，被最先遗忘的也是他们。</div>
-      </div>
-      <div class="ad">
-        <div class="ad-title">射手</div>
-        <div class="ad-content">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspADC承担团队的后期主要的输出点，它前期埋头打钱，后期各种针对，所以说ADC是可以改变游戏走向的位置。ADC生存能力弱其实还是由于角色定位，而非英雄决定的，而且ADC是后期团战的重中之重，如果一波团战后ADC继续存活意味着马上可以进行推线，所以团队对于ADC的保护一定要到位。</div>
-      </div>
+    <div class="game-way" id="page5">
+        <div class="gameway-title">游戏规则</div>
+        <div class="gameway-content">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp英雄联盟是一款经典的MOBA类游戏（简称LOL）。十名玩家每个玩家各选一个英雄，玩家们在一张地图上分成大体对称两边进行5V5对局，评判胜利的方式就是把对方基地水晶推平或者对方投降，而水晶需要英雄去拆，你去拆对方会阻止，所以需要击杀敌方英雄已达到拆塔的目的，这就体现了游戏的竞技性，一场游戏必须有五个人输，不是你死就是我亡，这也因此衍生了诸多的战术和玩法。玩家分为四条路，上路(上单）、中路(中单）、野区(打野）、下路(ad和辅助），通过攻击击杀敌方小兵、野怪(中立单位）或敌方英雄获取经济和经验，以此提升等级，提升装备，来达到推掉对方水晶，获取游戏胜利的目的。</div>
+        <br><br>
+        <div class="top">
+          <div class="top-title">上单</div>
+          <div class="top-content">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp顾名思义，即上路单人。承担的职责就是推塔推进，一般选择比较肉或者能抗能打的英雄。他在团战中要么负责开团，秒掉敌方主力输出，要么负责承受伤害，为队友全力输出保驾护航。</div>
+        </div>
+        <div class="jug">
+          <div class="jug-title">打野</div>
+          <div class="jug-content">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp通过清除野怪来获得经济和等级的提升。一般是队伍战队的发起点，责任是保留好主要的大型野怪，利用野区经济把经济最大化，以保障上、中、下三路发育，配合队友获得对战的优势，从这个角度理解打野属于经济补位。同时打野还可以充当一个gank位，因为上中下位置相对固定，所以打野位置不确定因素大，对某一路局势影响大。一个好的打野，是会审时度势，根据队友发育情况，对手强弱及兵线位置来选择帮助哪一条路。这也是为何有人在游戏中称打野为“爸爸”的原因了。</div>
+        </div>
+        <div class="mid">
+          <div class="mid-title">中单</div>
+          <div class="mid-content">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp与上单一样，中路单人。它是一个Carry位置，是团队的主力输出点。一般都选择手长的法师类英雄，少数是物理类近战英雄。中单不仅要负责推线推塔，还要在团战中最大化自己的输出，所以，中单的前期顺利发育至关重要</div>
+        </div>
+        <div class="sup">
+          <div class="sup-title">辅助</div>
+          <div class="sup-content">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp辅助的职业是保护ad的发育，辅助的作用在整个团队中尤为重要，占用很少的团队资源，要做视野，做探路兵。因此可以说辅助拿着最少的钱，死着最多的次数，做最苦的工作。开团是他们，保护Carry位置是他们，插眼是他们，身先士卒也是他们。在队伍取得胜利的时候，被最先遗忘的也是他们。</div>
+        </div>
+        <div class="ad">
+          <div class="ad-title">射手</div>
+          <div class="ad-content">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspADC承担团队的后期主要的输出点，它前期埋头打钱，后期各种针对，所以说ADC是可以改变游戏走向的位置。ADC生存能力弱其实还是由于角色定位，而非英雄决定的，而且ADC是后期团战的重中之重，如果一波团战后ADC继续存活意味着马上可以进行推线，所以团队对于ADC的保护一定要到位。</div>
+        </div>  
     </div>
-  </div>
 
   <br><br><br><br>
 
 
-<script>
+<!-- <script>
   const boxes = document.querySelectorAll('.scrollpage');
   window.addEventListener('scroll',()=>{
     const triggleBottom = window.innerHeight*8/9;
@@ -315,7 +322,7 @@
       }
     })
   })
-</script>
+</script> -->
 
 
 
