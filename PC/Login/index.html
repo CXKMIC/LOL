@@ -40,8 +40,6 @@
         // 获取元素
         let btn = document.querySelector('button');
         btn.addEventListener("click",function(){
-            // let inp1 = document.getElementById('inp1').value;
-            // let inp2 = document.getElementById('inp2').value;
 
             function browserRedirect() {
             var sUserAgent = navigator.userAgent.toLowerCase();
@@ -61,12 +59,31 @@
         }
         browserRedirect(); 
 
-
-            // sessionStorage.setItem("user",inp1);
-            // sessionStorage.setItem("password",inp2);
         })
-        let res1 = sessionStorage.getItem("user");
-        let res2 = sessionStorage.getItem("password");
+
+
+
+        btn.addEventListener("touch",function(){
+
+        function browserRedirect() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            window.location.href= '../../MOBILE/主页M.html';
+        } else {
+            window.location.href= '../mainpage/主页.html';
+        }
+        }
+        browserRedirect(); 
+
+        })
 
 
     </script>
