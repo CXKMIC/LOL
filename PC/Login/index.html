@@ -54,9 +54,9 @@
             var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
             var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
             if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-                window.open('.../MOBILE/主页M.html','_self');
+                window.location.href= '../../MOBILE/主页M.html','_self';
             } else {
-                window.open('../mainpage/主页.html','_self');
+                window.location.href= '../mainpage/主页.html','_self';
             }
         }
         browserRedirect(); 
