@@ -163,20 +163,6 @@ body{
 }
 
 
-/* 滚动条样式 */
-#role-bar::-webkit-scrollbar {
-  width: 16px;
-}
-#role-bar::-webkit-scrollbar-track {
-  background-color: #e4e4e4;
-  border-radius: 100px;
-}
-#role-bar::-webkit-scrollbar-thumb {
-  background-color: #d4aa70;
-  border-radius: 100px;
-}
-
-
 .game-way{
   display: flex;
   flex-direction: column;

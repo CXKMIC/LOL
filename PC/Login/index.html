@@ -40,8 +40,8 @@
         // 获取元素
         let btn = document.querySelector('button');
         btn.addEventListener("click",function(){
-            let inp1 = document.getElementById('inp1').value;
-            let inp2 = document.getElementById('inp2').value;
+            // let inp1 = document.getElementById('inp1').value;
+            // let inp2 = document.getElementById('inp2').value;
 
             function browserRedirect() {
             var sUserAgent = navigator.userAgent.toLowerCase();
@@ -62,8 +62,8 @@
         browserRedirect(); 
 
 
-            sessionStorage.setItem("user",inp1);
-            sessionStorage.setItem("password",inp2);
+            // sessionStorage.setItem("user",inp1);
+            // sessionStorage.setItem("password",inp2);
         })
         let res1 = sessionStorage.getItem("user");
         let res2 = sessionStorage.getItem("password");
