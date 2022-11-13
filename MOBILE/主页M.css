@@ -1,0 +1,210 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  display: flex;
+  background-color: #e3e3e3;
+}
+
+.allbox{
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  background-image: url(https://cdn.staticaly.com/gh/CXKMIC/images@main/champion.2j4n1l4hwk80.webp); 
+  background-size: cover;
+  height: 206px;
+}
+
+.head-nav>li {
+  float: left;
+  list-style: none;
+  width: 20%;
+  font-size: 15px;
+  font-weight: 500;
+  height: 78px;
+  text-align: center
+
+}
+
+.head-nav>li>a {
+  display: block;
+  text-decoration:none;
+  width: 100%;
+  height: 100%
+}
+
+.head-nav-title {
+  display: block;
+  color: #fff;
+  letter-spacing: 1px
+
+}
+
+
+.big-box{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  flex:1
+  
+}
+
+.big-box .empty{
+  width: 10vw;
+  height: 10vh;
+  flex: 1;
+}
+
+.big-box .comment{
+  width: 10vw;
+  height: 10vh;
+  flex: 3;
+}
+
+.comment img{
+  max-width: 100%;
+}
+
+.score-list{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.score-list .summer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.score-list .spring{
+  flex: 1;
+}
+
+.score-list .spring-list h2{
+  text-align: center;
+  color: #701717;
+  font-size: 15px;
+}
+.score-list .summer-list h2{
+  text-align: center;
+  color: #701717;
+  font-size: 15px;
+}
+
+.gamebackground{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gamebackground .story-title{
+  display: flex;
+  align-items: center;
+  flex: 0.5;
+  font-family: "阿里妈妈数黑体 Bold" !important;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 1000;
+  color: rgb(140, 47, 47);
+}
+
+.gamebackground .story{
+  flex: 3;
+  background: url(https://cdn.staticaly.com/gh/CXKMIC/images@main/bg.6qu1lrgx0400.webp);
+  width: 80vw;
+  height: 40vh;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 6px 6px 5px #9e9c9c;
+  background-size: cover;
+  opacity: 0.6;
+}
+
+
+.role-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.role-info .role-title{
+  display: flex;
+  align-items: center;
+  flex: 0.5;
+  font-size: 15px;
+  font-weight: 1000;
+  color: rgb(140, 47, 47);
+}
+
+.role-info .role{
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  height: 574px;
+  overflow-x:hidden;
+}
+
+
+/* 滚动条样式 */
+#role-bar::-webkit-scrollbar {
+  width: 16px;
+}
+#role-bar::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+#role-bar::-webkit-scrollbar-thumb {
+  background-color: #d4aa70;
+  border-radius: 100px;
+}
+
+
+.game-way{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-way .gameway-title{
+  text-align: center;
+  font-size: 15px;
+  font-weight: 1000;
+  color: rgb(140, 47, 47);
+
+}
+
+.game-way .gameway-content{
+  font-size: 20px;
+  font-weight: 500;
+
+}
+
+.game-way .top .top-title, .game-way .jug .jug-title, .game-way .mid .mid-title, .game-way .sup .sup-title, .game-way .ad .ad-title{
+  font-size: 15px;
+  font-weight: 1000;
+  color: rgb(140, 47, 47);
+}
+
+.game-way .top .top-content, .game-way .jug .jug-content, .game-way .mid .mid-content, .game-way .sup .sup-content, .game-way .ad .ad-content{
+  font-size: 16px;
+  font-weight: 500;
+}
