@@ -5,30 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录</title>
-    <link rel="stylesheet" href="登录.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="normalize.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="../dist/jquery.ripples.js"></script>
 </head>
 <body>
-    
-    <div class="box">
-        <h2>Login</h2>
-        <div class="input-box">
-            <label for="">账号</label>
-            <input type="text" id="inp1">
+<div class="box">
+    <div class="top">
+        <span class="off">LOGIN</span>
+        <div class="button">
+            <div class="ball"></div>
         </div>
-        <div class="input-box">
-            <label for="">密码</label>
-            <input type="password" id="inp2">
+        <span class="on">SIGN UP</span>
+    </div>
+    <div class="bottom">
+        <div class="signIn">
+            <h2>Login</h2>
+            <div class="input-box">
+                <label for="">账号</label>
+                <input type="text" id="username" placeholder="Username=admin">
+            </div>
+            <div class="input-box">
+                <label for="">密码</label>
+                <input type="password" id="password" placeholder="Password=123456">
+            </div>
+            <div class="btn-box">
+                <div>
+                    <button id="login">登录</button>
+                </div>
+            </div>
         </div>
-        <div class="btn-box">
-            <a href="#">可直接点击登录</a>
-            <div>
-                <button>登录</button>
+
+        <div class="signUp">
+            <h2>SignUp</h2>
+            <div class="input-box">
+                <label for="">账号</label>
+                <input text="username" id="usernames" placeholder="Username">
+            </div>
+            <div class="input-box">
+                <label for="">密码</label>
+                <input text="password" id="passwords" placeholder="Password">
+            </div>
+            <div class="btn-box">
+                <div>
+                    <button id="register">注册</button>
+                </div>
             </div>
         </div>
     </div>
+</div>
     <script>
         $("body").ripples({
             resolution: 1920,
@@ -37,54 +63,87 @@
         });
 
 
-        // 获取元素
-        let btn = document.querySelector('button');
-        btn.addEventListener("click",function(){
-
-            function browserRedirect() {
-            var sUserAgent = navigator.userAgent.toLowerCase();
-            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-            var bIsAndroid = sUserAgent.match(/android/i) == "android";
-            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-            if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-                window.location.href= '../../MOBILE/主页M.html';
-            } else {
-                window.location.href= '../mainpage/主页.html';
-            }
+    // 获取元素
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    function getCookie(cname)
+      {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) 
+        {
+          var c = ca[i].trim();
+          if (c.indexOf(name)==0) return c.substring(name.length,c.length);
         }
-        browserRedirect(); 
+        return "";
+      }
+    // if(getCookie('username')==='admin') {
+    //   window.location.href = '../mainpage/mainpage.html'
+    // }
+    const btn = document.querySelector('#login');
+    btn.onclick = () => {
+      const username = document.querySelector("#username").value.trim()
+      const passWord = document.querySelector('#password').value.trim()
+      if (username == 'admin' && passWord == '123456') {
+        // console.log('111')
+        // document.cookie = `username = ${username}; expires = Thu, 18 Dec 2043 12:00:00 GMT`
+        // const result = getCookie('username')
+        // console.log(result)
+        // window.location.href = '../mainpage/mainpage.html'
 
-        })
-
-
-
-        btn.addEventListener("touchend",function(){
-        function browserRedirect() {
-        var sUserAgent = navigator.userAgent.toLowerCase();
-        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-        var bIsAndroid = sUserAgent.match(/android/i) == "android";
-        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-            window.location.href= '../../MOBILE/主页M.html';
+        if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+          window.location.href = "../../MOBILE/mobileMainpage.html"; //手机
+          document.cookie = `username = ${username}; expires = Thu, 18 Dec 2040 12:00:00 GMT`
         } else {
-            window.location.href= '../mainpage/主页.html';
+            window.location.href = "../mainpage/mainpage.html"; //电脑
+            document.cookie = `username = ${username}; expires = Thu, 18 Dec 2040 12:00:00 GMT`
         }
+
+
+        // btn.addEventListener("touchend",function(){
+        //     if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+        //       window.location.href = "../../MOBILE/mobileMainpage.html"; //手机
+        //     } else {
+        //         window.location.href = "../mainpage/mainpage.html"; //电脑
+        //     }
+        // })
+      }
+    }
+
+
+    let button =document.querySelector('.button')
+    let bottom =document.querySelector('.bottom')
+    let ball =document.querySelector('.ball')
+    let off =document.querySelector('.off')
+    let on =document.querySelector('.on')
+    let index = 0
+    button.addEventListener('click',()=>{
+        if(index==0){
+            index = 1
+            ball.style.left = 61 + '%'
+            on.style.opacity = 1
+            off.style.opacity = .5
+            bottom.style.transform = "rotateY(180deg)"
+        }else{
+            index = 0
+            ball.style.left = 0 + '%'
+            on.style.opacity = .5
+            off.style.opacity = 1
+            bottom.style.transform = "rotateY(0)"
         }
-        browserRedirect(); 
+    })
 
-        })
+    let btn1 = document.querySelector('#register');
+    var usernames=document.getElementById('usernames').value
+    var passwords=document.getElementById('passwords').value
+    btn1.addEventListener("click",function(){
+        var usersArray = [];
+        usersArray.push(usernames);
+        console.log(usersArray)
+    })
 
 
+
+    
     </script>
 </body>
 </html>

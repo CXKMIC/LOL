@@ -1,0 +1,22 @@
+{
+  "name": "cxkmic.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CXKMIC/CXKMIC.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CXKMIC/CXKMIC.github.io/issues"
+  },
+  "homepage": "https://github.com/CXKMIC/CXKMIC.github.io#readme",
+  "dependencies": {
+    "js-cookie": "^3.0.1"
+  }
+}

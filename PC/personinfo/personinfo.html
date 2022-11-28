@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="关于.css">
+        <link rel="stylesheet" href="personinfo.css">
         <title>个人</title>
         <style>
            
@@ -150,16 +150,11 @@
                 // 弹出确认框，点击确定之后，再执行程序
                 // 也就是 window.confirm() 的返回值是true，再执行程序
                 if (window.confirm('您确定要添加吗?')) {
-                    // 获取数据 
-                    // 获取 姓名
                     let name = oIptName.value;
                     console.log(name);
                     // 获取 战绩 转化为数值类型
                     let kill = oIptKill.value - 0;
-                    // 获取 位置
-                    // 通过 数组 将 城市对应的数值 转化为具体的中文数据
                     let site = siteArr[oSelSite.value];
-                    // 获取 性别
                     let condition;
                     for (let i = 0; i <= oIptCon.length - 1; i++) {
                         if (oIptCon[i].checked) {
@@ -251,14 +246,10 @@
                 // 弹出确认框，点击确定再执行程序
                 if (window.confirm('您确定要修改吗?')) {
                     // 获取 修改标签中的数据数值
-                    // 获取 姓名
                     let name = oIptNameChange.value;
-                    // 获取 年龄，转化为数值类型
                     let kill = oIptKillChange.value - 0;
-                    // 获取 城市
                     // 通过数组，将城市对应的数值转化为具体的中文数据
                     let site = siteArr[oSelSiteChange.value];
-                    // 获取 性别
                     let condition;
                     for (let i = 0; i <= oIptConChange.length - 1; i++) {
                         if (oIptConChange[i].checked) {

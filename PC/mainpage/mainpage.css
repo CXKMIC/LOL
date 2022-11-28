@@ -3,13 +3,6 @@
     padding: 0
 }
 
-/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
-@font-face {
-    font-family: "阿里妈妈数黑体 Bold";font-weight: 700;src: url("//at.alicdn.com/wf/webfont/wcyWqCGMcmZa/FkXhJm3V47R88l2Fjjr42.woff2") format("woff2"),
-    url("//at.alicdn.com/wf/webfont/wcyWqCGMcmZa/J9QgjGGzmSWGlLg7xjPV-.woff") format("woff");
-    font-display: swap;
-  }
-
 body {
     overflow-x: hidden;
     background-color: #e3e3e3;
@@ -298,34 +291,6 @@ li {
 }
 
 
-/* 跳转栏 */
-/* .pagetab {
-    border-top: 4px solid #d7d7d7;
-    border-bottom: 1px solid #e2e2e2;
-    height: 48px;
-    background: #f0f0f0
-}
-
-.pagetab-list,
-.pagetab-list li {
-    float: left
-}
-
-.pagetab-list {
-    margin-top: -4px;
-    margin-bottom: -2px;
-    position: relative;
-    height: 53px
-}
-
-.pagetab-list-lnk:hover,
-.pagetab-list .a {
-    text-decoration: none;
-    color: #00a383;
-    border-top: 4px solid #00a383;
-} */
-
-
 /* 资讯页 */
 .layout{
     display: flex;
@@ -472,7 +437,6 @@ li {
     display: flex;
     align-items: center;
     flex: 0.5;
-    font-family: "阿里妈妈数黑体 Bold" !important;
     text-align: center;
     font-size: 35px;
     font-weight: 1000;
@@ -577,21 +541,6 @@ li {
     font-size: 16px;
     font-weight: 500;
 }
-
-
-/* .scrollpage{
-    transform: translateX(400%);
-    transition: transform 0.8s ease-in-out 0s;
-}
-.scrollpage:nth-of-type(even){
-    transform: translateX(-400%);
-}
-
-
-.scrollpage.show{
-    transform: translateX(0);
-} */
-
 
 .footer {
     background: #1c1c1c;

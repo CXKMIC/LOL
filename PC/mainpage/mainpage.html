@@ -5,9 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>英雄联盟官网</title>
-  <link rel="stylesheet" href="主页.css">
+  <link rel="stylesheet" href="mainpage.css">
   <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="media.css">
 </head>
 
 <body>
@@ -49,7 +48,7 @@
           </li>
 
           <li>
-            <a href="../personinfo/关于.html" title="个人中心">
+            <a href="../personinfo/personinfo.html" title="个人中心">
               <span class="head-nav-title">个人中心</span>
               <span class="head-nav-subtitle">SELF</span>
             </a>
@@ -239,12 +238,13 @@
                 }
               }
             }
-            oBox.onmouseover = function () { //鼠标移到图片时停止计时
-              clearInterval(timer);
-            }
-            oBox.onmouseout = function () { //移出图片外开始计时
-              timer = setInterval(autoPlay, 3000);
-            }
+            // oBox.onmouseover = function () { //鼠标移到图片时停止计时
+            //   clearInterval(timer);
+            // }
+            // console.log(oBox)
+            // oBox.onmouseout = function () { //移出图片外开始计时
+            //   timer = setInterval(autoPlay, 3000);
+            // }
           </script>
         </div>
       </div>
