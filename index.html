@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/normalize.css">
 </head>
 <body>
 <div class="box">
@@ -156,9 +156,9 @@
             const isreal = realuserinfo.find(item => item.usernames == logininfo.loginusername && item.passwords == logininfo.loginpassword)
             if (isreal) {
                 if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
-                    window.location.href = "../../MOBILE/mobileMainpage.html"; //手机
+                    window.location.href = "mobileMainpage.html"; //手机
                 } else { 
-                    window.location.href = "../mainpage/mainpage.html"; //电脑
+                    window.location.href = "mainpage.html"; //电脑
                 }
             } else {
                 alert("账号密码错误")
