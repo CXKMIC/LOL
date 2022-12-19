@@ -501,46 +501,127 @@ li {
     border-radius: 100px;
 }
 
-
-
-.game-way{
+.opinion{
     display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-
-.game-way .gameway-title{
-    text-align: center;
-    font-size: 25px;
-    font-weight: 1000;
-    color: rgb(140, 47, 47);
-
+.opinion .list {
+  list-style: none;
 }
-
-.game-way .gameway-content{
-    font-size: 20px;
-    font-weight: 500;
-    padding-left: 140px;
-    padding-right: 140px;
-}
-
-.game-way .top .top-title, .game-way .jug .jug-title, .game-way .mid .mid-title, .game-way .sup .sup-title, .game-way .ad .ad-title{
-    padding-left: 140px;
-    padding-right: 140px;
+.opinion .op-title{
+    display: flex;
+    align-items: center;
+    flex: 0.5;
     font-size: 25px;
     font-weight: 1000;
     color: rgb(140, 47, 47);
 }
-
-.game-way .top .top-content, .game-way .jug .jug-content, .game-way .mid .mid-content, .game-way .sup .sup-content, .game-way .ad .ad-content{
-    padding-left: 140px;
-    padding-right: 150px;
-    font-size: 16px;
-    font-weight: 500;
+.w_box{
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px -10px #1c1c1c;
+    padding-top: 100px;
 }
+.w {
+  width: 900px;
+  margin:0 auto;
+}
+.controls textarea {
+  width: 878px;
+  height: 100px;
+  resize: none;
+  border-radius: 10px;
+  outline:none;
+  padding-left: 20px;
+  padding-top:10px;
+  font-size: 18px;
+}
+.controls {
+  overflow: hidden;
+}
+
+.controls div {
+  float: right;
+}
+.controls div span {
+  color:#666;
+}
+.controls div .useCount {
+  color:red;
+}
+.controls div button {
+  width: 100px;
+  outline: none;
+  border:none;
+  background: rgb(0, 132, 255);
+  height: 30px;
+  cursor: pointer;
+  color:#fff;
+  font:bold 14px '宋体';
+  transition: all 0.5s;
+}
+.controls div button:hover {
+  background: rgb(0, 225, 255);
+}
+.controls div button:disabled {
+  background: rgba(0, 225, 255,0.5);
+}
+.contentList {
+  margin-top:50px;
+  position: relative;
+}
+.contentList li {
+  padding: 20px 0;
+  position: relative;
+  opacity: 0;
+  border-bottom: 1px dashed #ccc;
+}
+.contentList li .info {
+  position: relative;
+}
+.contentList li .info span {
+  left:25px;
+  font:bold 16px '宋体';
+}
+.contentList li .info p {
+  top:40px;
+  left: 100px;
+  color:#aaa;
+  font-size: 12px;
+}
+.contentList img {
+  width: 80px;
+  border-radius: 50%;
+}
+.contentList li .content {
+  color: #666;
+  word-break: break-all;
+}
+.contentList li button {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  background-color: #0084FF;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+.contentList li button:disabled{
+  background: rgba(0, 225, 255,0.5);
+}
+.contentList li button:hover {
+  background: rgb(0, 225, 255);
+}
+  
+
 
 .footer {
     background: #1c1c1c;

@@ -1,13 +1,13 @@
 *{
     padding: 0;
     margin: 0;
-}
 
-img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
+}
+body{
+    /* background: url(https://cdn.staticaly.com/gh/CXKMIC/images@main/wallhaven-mpgkjm.zy86kk64o8w.webp) no-repeat; 
+    background-size: cover; */
+    background: linear-gradient(45deg, rgb(102,178,114) 0%,rgb(80,163,195) 100%);
+    background-size: cover;
 }
 
 .box{
@@ -17,6 +17,39 @@ img{
     display: flex;
 }
 
+.box .add{
+    color: #fff;
+}
+
+.box #input{
+    box-sizing: border-box;
+    color: rgba(243, 243, 243, 0.523);
+    font-size: 14px;
+    height: 35px;
+    width: 250px;
+    background: rgb(206, 206, 206);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 5px;
+    transition: 0.2s;
+    outline: none;
+    padding: 0 10px;
+    letter-spacing: 1px;
+}
+
+.box .btn-box > button{
+    width: 100px;
+    height: 35px;
+    border: 1px solid rgba(197,81,58,0.8);
+    background: rgba(197,81,58,0.8);
+    color: rgba(255,255,255,0.9);
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.box .btn-box > button:hover{
+    border: 1px solid rgba(248,108,76,0.8);
+    background: rgba(248,108,76,0.8);
+}
 
 .add{
     display: flex;
@@ -33,7 +66,7 @@ img{
 }
 
 .record .small-title{
-    color: darkcyan; 
+    color: #fff;
     font-size: 30px; 
     text-align: left;
 }
@@ -57,6 +90,7 @@ td{
     border: 1px solid rgb(0, 0, 0);
     border-radius: 10px;
     font-size: 15px;
+    color: #fff;
 }
 
 .change {
@@ -75,6 +109,6 @@ td{
     width: 300px;
     height: 300px;
     padding: 30px 15px;
-    background: rgba(175, 175, 175, 0.655);
+    background: rgba(218, 218, 218, 0.655);
     border-radius: 30px;
 }
