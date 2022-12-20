@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="./css/normalize.css">
   <script src="./js/jq.js"></script>
   <script src="./js/cookie.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcss.com/dot/2.0.0-beta.0/doT.min.js"></script>
 </head>
 
 <body>
@@ -36,8 +39,8 @@
           </li>
 
           <li>
-            <a href="#page4" title="角色大全">
-              <span class="head-nav-title">角色大全</span>
+            <a href="#page4" title="英雄图鉴">
+              <span class="head-nav-title">英雄图鉴</span>
               <span class="head-nav-subtitle">ROLE INFO</span>
             </a>
           </li>
@@ -55,6 +58,7 @@
               <span class="head-nav-subtitle">SELF</span>
             </a>
           </li>
+
         </ul>
 
         <!--玩家信息-->
@@ -89,19 +93,19 @@
         <div class="score-list">
           <div class="sping">
             <div class="spring-list">
-              <h2>2022春季常规赛积分榜</h2>
+              <div id="spring_score"></div>
               <img class="list1" src="https://cdn.staticaly.com/gh/CXKMIC/images@main/springlist.6ez3rmgj4lk0.webp" >
             </div>
           </div>
           <div class="summer">
             <div class="summer-list">
-              <h2>2022夏季常规赛积分榜</h2>
+              <div id="summer_score"></div>
               <img class="list2"  src="https://cdn.staticaly.com/gh/CXKMIC/images@main/summerlist.qdi68ldrvhc.webp" >
             </div>
           </div>
         </div>
         <div class="big-box">
-          <div class="img-title"><h1>2022LPL出征战队</h1></div>
+          <div class="img-title" id="scroll_title" ></div>
           <div class="inner-box">
             <div class="box">
               <ul id="inner-box">
@@ -230,7 +234,7 @@
     
     <!-- 游戏背景 -->
     <div class="gamebackground" id="page3">
-      <div class="story-title">英雄联盟背景故事</div>
+      <div class="story-title" id="bgc_title"></div>
       <div class="story">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp直到二十年前，符文之地才从战乱中解脱。这片大陆上的人民自远古以来就习惯结群而斗，用战争解决纷争。而不论何时，战争的工具始终都是魔法。军队用法术和符文武装自己，英雄们打造出大部分魔法物品率领部队彼此厮杀。召唤者，瓦罗然大陆的实际领导者们，他们疯狂使用魔法能量攻击敌人的部队和支持者。他们拥有近乎无限的原始魔法力量使用，从未考虑过无止境的滥用魔法会给这片大陆的环境带来怎么样的灾难<br>
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp然而近200年来无止境的魔法滥用让瓦罗然的人民看到了符文之地的脆弱现状。最后两次符文之战剧烈影响了瓦罗然的地质环境，尽管人们试图聚集魔法能量来恢复这灾难性的后果，却毫无作用。剧烈的地震和恐怖的魔法风暴让整个瓦罗然为之颤抖，对人们来说这份恐惧远超过战争的可怖。人们终于意识到世界已经承受不起符文之战的破坏<br>
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp为了回应世界上不断恶化的政治和经济危机，瓦罗然的大法师们 —— 包括许多强大的召唤者 ——达成共识，所有的冲突必须以可控和系统化的方式来处理。他们成立了一个叫英雄联盟的组织，目的在于监督瓦罗然的政治纷争得以有序处理。位于战争学院的英雄联盟获得瓦罗然政治实体们陆续授权，这个组织将管理处置所有政治纷争带来的结果<br>     
@@ -248,7 +252,7 @@
 
     <!-- 角色大全-  -->
     <div class="role-info" id="page4">
-      <div class="role-title">英雄联盟角色大全(截止于2022.10.02)</div>
+      <div class="role-title" id="role"></div>
       <div class="role" id="role-bar">
         <img class="role1" src="https://cdn.staticaly.com/gh/CXKMIC/images@main/role1.18z9917lf22o.webp" alt="">
         <img class="role2" src="https://cdn.staticaly.com/gh/CXKMIC/images@main/role2.2rotyumbv780.webp" alt="">
@@ -260,7 +264,7 @@
 
     <!-- 意见 -->
     <div class="opinion" id="page5">
-      <div class="op-title">意见箱</div>
+      <div class="op-title" id="op"></div>
       <br><br>
       <div class="w_box">
         <div class="w">
@@ -275,164 +279,235 @@
             </div>
           
           </div>
-          <!-- 微博内容列表 -->
+          <!-- 内容列表 -->
           <div class="contentList">
             <ul class="list">
             
             </ul>
           </div>
+
+          <div class="router_box">
+            <a href="/help" class="router">帮助</a>
+            <a href="/update" class="router">更新日志</a>
+            <a href="/team" class="router">团队</a>
+            <a href="/about" class="router">关于我们</a>
+        </div>
+        <div id="router-view"></div>
+
+
         </div>
       </div>
     </div>
+
+    <script id="template" type="text/template">
+      <p>{{= it.name }}</p>
+    </script>
+
     <script>
-        $(function () {
-          //名字数组
-          var nameArr = ["你的意见："];
-          //名字对应下标 也是要生成的随机数的数组
-          var newArr = [];
-          //本地存储数据 对象数组
-          var bd_arr = [];
-          //每次刷新页面 或者一进入页面 有历史记录就要显示出来
-          getItem();
-          //发布按钮  用on()绑定点击事件
-          $("#send").on("click", function () {
-              //检测有没有输入内容 有内容允许发布 否则提示
-              if ($(this).parents().siblings("#area").val() == "") {
-                  alert("写点什么再发布吧~");
-              } else {
-                  //获取要存储的新的数据
-                  var name = nameArr[arfa()];
-                  var time = getTime();
-                  var nr = $(this).parents().siblings("#area").val();
-                  //要存储的数据 以对象的形式放在数组里
-                  bd_arr.push({name: name, time: time, nr: nr});
-                  //转成字符串
-                  var str = JSON.stringify(bd_arr);
-                  //向本地申请空间 存起来
-                  localStorage.setItem('li', str);
-                  //刷新数据  再显示最新的所有li
-                  getItem();
-                  //文本框置空
-                  $("#area").val("");
-                  //输入的字符置0
-                  $(".useCount").html("0");
-                  //发布完成 禁用按钮
-                  $("#send").prop("disabled", true);
-              }
-          });
-        
-          //可以绑定多个事件 用对象的方式  输入框绑定input,focus,,blur事件
-          $("#area").on({
-              input: function () {
-                  // 输入内容小于0禁用发布按钮
-                  if ($(this).val().length === 0) {
-                      $(".useCount").html("0");
-                      $("#send").prop("disabled", true);
-                  } else if ($(this).val().length > 200) {   //大于最大输入值 只取前200个字符做有效值
-                      $(this).val($(this).val()?.substring(0, 200));
-                  } else {
-                      //在有效范围内 解禁发布按钮
-                      $("#send").prop("disabled", false);
-                      //实时显示用户输入的字符数
-                      $(".useCount").html($(this).val().length);
-                  }
-              },
-              focus: function () {
-                  //重新获得焦点  解禁发布按钮 禁用删除按钮
-                  $("#send").prop("disabled", false);
-                  $("li").each(function (index, ele) {
-                      $(ele).find("#remove").prop("disabled", true);
-                  });
-              },
-              blur: function () {
-                  //失去焦点 解禁 删除按钮
-                  $("li").each(function (index, ele) {
-                      $(ele).find("#remove").prop("disabled", false);
-                  });
-              }
-          });
-        
-          //获取当时时间
-          function getTime() {
-              var data = new Date();
-              return (data.getFullYear() + "-" + (data.getMonth() + 1) + "-" + data.getDate() + " " + data.getHours() + "时" + data.getMinutes() + "分" + data.getSeconds() + "秒");
+      // 自写模板引擎测试
+      $(() => {
+        let data1 = {
+          name: '意见箱',
+          friends: [
+          ]
+        }
+        let data2 = {
+          name: '英雄图鉴（截止于2022.10.02）',
+          friends: [
+          ]
+        }
+        let data3 = {
+          name: '春季赛积分榜',
+          friends: [
+          ]
+        }
+        let data4 = {
+          name: '夏季赛积分榜',
+          friends: [
+          ]
+        }
+        let data5 = {
+          name: '2022出征战队',
+          friends: [
+          ]
+        }
+        let data6 = {
+          name: '英雄联盟背景故事',
+          friends: [
+          ]
+        }
+      
+        // 使用单例模式来缓存解析后的方法
+        let render = (function () {
+          let fn = null
+          return function (id, it) {
+            if (!fn) {
+              let html = $(`#${id}`).html()
+              html = html.replace(/\n/g, '').replace(/{{(?!=)/g, '\';').replace(/{{=/g, '\'+').replace(/}}/g, ';str+=\'')
+              fn = new Function('it', `let str='';str+='${html}';return str;`)
+            }
+            return fn(it)
           }
-        
-          //生成随机数 去重
-          function arfa() {
-              if (newArr.length === 0) {
-                  for (var i = 0; i < nameArr.length; i++) {
-                      newArr[newArr.length] = i;
-                  }
-              }
-              var num = Math.floor(Math.random() * nameArr.length);
-              while (1) {
-                  if (newArr.indexOf(num) !== -1) {
-                      newArr.splice(newArr.indexOf(num), 1);
-                      break;
-                  } else {
-                      num = Math.floor(Math.random() * nameArr.length);
-                      continue;
-                  }
-              }
-              return num;
-          }
-        
-          //读取本地数据
-          function getItem() {
-              var name_arr = [];
-              var time_arr = [];
-              var nr_arr = [];
-              var li_str = null;
-              //读取本地数据
-              var str = localStorage.getItem('li');
-              if (str != null) {
-                  //字符串数组转换为 对象数组
-                  bd_arr = JSON.parse(str);
-                  // 循环遍历
-                  for (var i = 0; i < bd_arr.length; i++) {
-                      // 取出一个对象
-                      var obj = bd_arr[i]; // {name:"...",time:"...",nr:"。。。"}
-                      name_arr[name_arr.length] = obj.name;
-                      time_arr[time_arr.length] = obj.time;
-                      nr_arr[nr_arr.length] = obj.nr;
-                  }
-                  //根据取出的数据  动态创建li
-                  for (var i = 0; i < name_arr.length; i++) {
-                      li_str = "<li>" +
-                          "<div class='info'>" +
-                          "<span>" + name_arr[i] + "</span>" +
-                          "<p>" + "发布于：" + time_arr[i] + "</p>" +
-                          "</div>" +
-                          "<br>"+
-                          "<div class='content'>" + nr_arr[i] + "</div>" +
-                          "<button id='remove'>" + "删除" + "</button>" +
-                          "</li>" +
-                          li_str
-                      ;
-                  }
-                  //因为有数据更新要覆盖显示 所以用了html方式添加li  fadeTo()淡入效果
-                  $("ul.list").html($(li_str)).children().stop().fadeTo(1000, 1);
-                  //在刚进入页面 没有发布按钮的点击事件时  删除按钮也要好用 所以这里也要绑定点击事件
-                  //给删除按钮绑定 点击事件 因为li动态生成的 要在生成之后立马绑定事件
-                  $("li button").each(function (i, e) {
-                      $(e).on("click", function () {
-                          $(this).parents("li").remove();
-                          //要删除的数据 在数组里找到并删除
-                          bd_arr.pop({
-                              name: $(this).parents("li").find(".info span").html(),
-                              time: $(this).parents("li").find(".info p").html().substr(4),
-                              nr: $(this).parents("li").find(".content").html()
-                          });
-                          //转成字符串
-                          str = JSON.stringify(bd_arr);
-                          //覆盖删除前的数据
-                          localStorage.setItem('li', str);
-                      });
-                  });
-              }
-          }
+        })()
+      
+        //使用模板渲染一组数据
+        $('#op').append(render('template', data1))
+        $('#role').append(render('template', data2))
+        $('#spring_score').append(render('template', data3))
+        $('#summer_score').append(render('template', data4))
+        $('#scroll_title').append(render('template', data5))
+        $('#bgc_title').append(render('template', data6))
+      })
+
+      // 建议
+      $(function () {
+        //名字数组
+        var nameArr = ["你的意见："];
+        //名字对应下标 也是要生成的随机数的数组
+        var newArr = [];
+        //本地存储数据 对象数组
+        var bd_arr = [];
+        //每次刷新页面 或者一进入页面 有历史记录就要显示出来
+        getItem();
+        //发布按钮  用on()绑定点击事件
+        $("#send").on("click", function () {
+            //检测有没有输入内容 有内容允许发布 否则提示
+            if ($(this).parents().siblings("#area").val() == "") {
+                alert("写点什么再发布吧~");
+            } else {
+                //获取要存储的新的数据
+                var name = nameArr[arfa()];
+                var time = getTime();
+                var nr = $(this).parents().siblings("#area").val();
+                //要存储的数据 以对象的形式放在数组里
+                bd_arr.push({name: name, time: time, nr: nr});
+                //转成字符串
+                var str = JSON.stringify(bd_arr);
+                //向本地申请空间 存起来
+                localStorage.setItem('li', str);
+                //刷新数据  再显示最新的所有li
+                getItem();
+                //文本框置空
+                $("#area").val("");
+                //输入的字符置0
+                $(".useCount").html("0");
+                //发布完成 禁用按钮
+                $("#send").prop("disabled", true);
+            }
         });
+      
+        //可以绑定多个事件 用对象的方式  输入框绑定input,focus,,blur事件
+        $("#area").on({
+            input: function () {
+                // 输入内容小于0禁用发布按钮
+                if ($(this).val().length === 0) {
+                    $(".useCount").html("0");
+                    $("#send").prop("disabled", true);
+                } else if ($(this).val().length > 200) {   //大于最大输入值 只取前200个字符做有效值
+                    $(this).val($(this).val()?.substring(0, 200));
+                } else {
+                    //在有效范围内 解禁发布按钮
+                    $("#send").prop("disabled", false);
+                    //实时显示用户输入的字符数
+                    $(".useCount").html($(this).val().length);
+                }
+            },
+            focus: function () {
+                //重新获得焦点  解禁发布按钮 禁用删除按钮
+                $("#send").prop("disabled", false);
+                $("li").each(function (index, ele) {
+                    $(ele).find("#remove").prop("disabled", true);
+                });
+            },
+            blur: function () {
+                //失去焦点 解禁 删除按钮
+                $("li").each(function (index, ele) {
+                    $(ele).find("#remove").prop("disabled", false);
+                });
+            }
+        });
+      
+        //获取当时时间
+        function getTime() {
+            var data = new Date();
+            return (data.getFullYear() + "-" + (data.getMonth() + 1) + "-" + data.getDate() + " " + data.getHours() + "时" + data.getMinutes() + "分" + data.getSeconds() + "秒");
+        }
+      
+        //生成随机数 去重
+        function arfa() {
+            if (newArr.length === 0) {
+                for (var i = 0; i < nameArr.length; i++) {
+                    newArr[newArr.length] = i;
+                }
+            }
+            var num = Math.floor(Math.random() * nameArr.length);
+            while (1) {
+                if (newArr.indexOf(num) !== -1) {
+                    newArr.splice(newArr.indexOf(num), 1);
+                    break;
+                } else {
+                    num = Math.floor(Math.random() * nameArr.length);
+                    continue;
+                }
+            }
+            return num;
+        }
+      
+        //读取本地数据
+        function getItem() {
+            var name_arr = [];
+            var time_arr = [];
+            var nr_arr = [];
+            var li_str = null;
+            //读取本地数据
+            var str = localStorage.getItem('li');
+            if (str != null) {
+                //字符串数组转换为 对象数组
+                bd_arr = JSON.parse(str);
+                // 循环遍历
+                for (var i = 0; i < bd_arr.length; i++) {
+                    // 取出一个对象
+                    var obj = bd_arr[i]; // {name:"...",time:"...",nr:"。。。"}
+                    name_arr[name_arr.length] = obj.name;
+                    time_arr[time_arr.length] = obj.time;
+                    nr_arr[nr_arr.length] = obj.nr;
+                }
+                //根据取出的数据  动态创建li
+                for (var i = 0; i < name_arr.length; i++) {
+                    li_str = "<li>" +
+                        "<div class='info'>" +
+                        "<span>" + name_arr[i] + "</span>" +
+                        "<p>" + "发布于：" + time_arr[i] + "</p>" +
+                        "</div>" +
+                        "<br>"+
+                        "<div class='content'>" + nr_arr[i] + "</div>" +
+                        "<button id='remove'>" + "删除" + "</button>" +
+                        "</li>" +
+                        li_str
+                    ;
+                }
+                //因为有数据更新要覆盖显示 所以用了html方式添加li  fadeTo()淡入效果
+                $("ul.list").html($(li_str)).children().stop().fadeTo(1000, 1);
+                //在刚进入页面 没有发布按钮的点击事件时  删除按钮也要好用 所以这里也要绑定点击事件
+                //给删除按钮绑定 点击事件 因为li动态生成的 要在生成之后立马绑定事件
+                $("li button").each(function (i, e) {
+                    $(e).on("click", function () {
+                        $(this).parents("li").remove();
+                        //要删除的数据 在数组里找到并删除
+                        bd_arr.pop({
+                            name: $(this).parents("li").find(".info span").html(),
+                            time: $(this).parents("li").find(".info p").html().substr(4),
+                            nr: $(this).parents("li").find(".content").html()
+                        });
+                        //转成字符串
+                        str = JSON.stringify(bd_arr);
+                        //覆盖删除前的数据
+                        localStorage.setItem('li', str);
+                    });
+                });
+            }
+        }
+      });
     </script>
   <br><br><br><br>
 
@@ -449,5 +524,61 @@
           <p><a href="#" target="_blank">腾讯公司 版权所有</a></p>
       </div>
     </div>
+    
+    //简单路由
+    <script type="text/javascript">
+        function Vue(parameters) {
+            let vue = {};
+            vue.routes = parameters.routes || [];
+            vue.init = function() {
+                document.querySelectorAll(".router").forEach((item, index) => {
+                    item.addEventListener("click", function(e) {
+                        let event = e || window.event;
+                        event.preventDefault();
+                        window.location.hash = this.getAttribute("href");
+                    }, false);
+                });
+                window.addEventListener("hashchange", () => {
+                    vue.routerChange();
+                });
+                vue.routerChange();
+            };
+            vue.routerChange = () => {
+                let nowHash = window.location.hash;
+                let index = vue.routes.findIndex((item, index) => {
+                    return nowHash == ('#' + item.path);
+                });
+                if (index >= 0) {
+                    document.querySelector("#router-view").innerHTML = vue.routes[index].component;
+                } else {
+                    let defaultIndex = vue.routes.findIndex((item, index) => {
+                        return item.path == '*';
+                    });
+                    if (defaultIndex >= 0) {
+                        window.location.hash = vue.routes[defaultIndex].redirect;
+                    }
+                }
+            };
+            vue.init();
+        }
+        new Vue({
+            routes: [{
+                path: '/help',
+                component: "<h1>帮助</h1><div>本网站共有两种体验模式：</div><div>1、你可以通过以下网址在登录注册界面进行相应操作，登陆后在体验本网站（温馨提示：由于本网站挂载于gitpage，由于网络波动或者代理问题，登录操作后可能出现无法跳转的情况，所以请视自身情况而定）</div><a href='https://cxkmic.github.io/'>https://cxkmic.github.io/</a><div>2、你可以通过以下网址直接进入本网站主界面进行相应操作（温馨提示：由于本网站挂载于gitpage，由于网络波动或者代理问题，登录操作后可能出现无法跳转的情况，但相对于第一种模式体验更好）</div><a href='https://cxkmic.github.io/mainpage.html'>https://cxkmic.github.io/mainpage.html</a><h4 style=color:red>经十位同学的测试，在电脑设备、网络和代理均正常的情况下，无论是谷歌、火狐还是Edge，绝不会出现卡顿、打开失败等问题</h4>"
+            }, {
+                path: '/update',
+                component: "<h1>更新日志</h1><a href='https://github.com/CXKMIC/CXKMIC.github.io'>https://github.com/CXKMIC/CXKMIC.github.io</a>"
+            }, {
+                path: '/team',
+                component: '<h1>团队</h1><h4>成员：陈翔凯</h4>'
+            }, {
+                path: '/about',
+                component: '<h1>关于我们</h1><h4>关注公众号：HelloWorld</h4><p>分享 WEB 全栈开发等相关的技术文章，热点资源，全栈程序员的成长之路。</p>'
+            }, {
+                path: '*',
+                redirect: '/help'
+            }]
+        });
+    </script>
 </body>
 </html>
